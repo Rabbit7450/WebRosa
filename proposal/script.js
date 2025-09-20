@@ -49,6 +49,14 @@ function nextSection() {
     current.classList.add('hidden');
     next.classList.remove('hidden');
     next.classList.add('animate__animated', 'animate__fadeIn');
+    
+    // Scroll suave hacia la nueva sección
+    setTimeout(() => {
+      next.scrollIntoView({ 
+        behavior: 'smooth', 
+        block: 'start' 
+      });
+    }, 100);
   }
 }
 

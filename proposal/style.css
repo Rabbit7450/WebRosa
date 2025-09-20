@@ -1,13 +1,14 @@
 body, html {
   margin: 0;
   padding: 0;
-  height: 100%;
+  min-height: 100vh;
   font-family: 'Segoe UI', sans-serif;
   background: linear-gradient(135deg, #ff4d94, #4d4dff);
   background-size: 400% 400%;
   animation: gradientBG 15s ease infinite;
   color: #fff;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 @keyframes gradientBG {
@@ -27,9 +28,13 @@ body, html {
   position: relative;
   z-index: 1;
   text-align: center;
-  top: 50%;
-  transform: translateY(-50%);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   padding: 20px;
+  box-sizing: border-box;
 }
 
 .hidden {
@@ -393,6 +398,9 @@ body, html {
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(5px);
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  max-width: 100%;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .dots {
@@ -499,7 +507,9 @@ audio#bgMusic::-webkit-media-controls-timeline {
   
   .section {
     padding: 15px;
-    top: 45%;
+    min-height: 100vh;
+    justify-content: flex-start;
+    padding-top: 20px;
   }
   
   .title, .subtitle {
@@ -584,7 +594,9 @@ audio#bgMusic::-webkit-media-controls-timeline {
 @media (max-width: 480px) {
   .section {
     padding: 10px;
-    top: 40%;
+    min-height: 100vh;
+    justify-content: flex-start;
+    padding-top: 15px;
   }
   
   .title, .subtitle {
@@ -735,7 +747,8 @@ audio#bgMusic::-webkit-media-controls-timeline {
 /* Orientación landscape en móviles */
 @media (max-height: 500px) and (orientation: landscape) {
   .section {
-    top: 35%;
+    min-height: 100vh;
+    justify-content: center;
     padding: 5px;
   }
   

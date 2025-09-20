@@ -1,0 +1,28 @@
+[build]
+  publish = "."
+
+[build.environment]
+  NODE_VERSION = "18"
+
+# Configuración para notificaciones de formularios
+[[plugins]]
+  package = "@netlify/plugin-form-submissions"
+
+# Configuración de notificaciones por email
+[context.production.environment]
+  NETLIFY_EMAILS_SECRET = "your-secret-key-here"
+
+# Redirecciones después del envío del formulario
+[[redirects]]
+  from = "/success"
+  to = "/index.html"
+  status = 200
+
+# Configuración de headers para seguridad
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"

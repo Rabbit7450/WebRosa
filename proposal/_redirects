@@ -1,0 +1,5 @@
+# Redirección después del envío exitoso del formulario
+/success /index.html 200
+
+# Redirección para errores de formulario
+/error /index.html 200
