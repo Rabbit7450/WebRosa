@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>¿Quieres ser mi novia, Rosa?</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <div id="particles-js"></div>
+  
+  <div class="floating-hearts">
+    <i class="fas fa-heart heart1"></i>
+    <i class="fas fa-heart heart2"></i>
+    <i class="fas fa-heart heart3"></i>
+    <i class="fas fa-heart heart4"></i>
+    <i class="fas fa-heart heart5"></i>
+  </div>
+
+  <!-- Sección 1: Intro -->
+  <div class="section animate__animated animate__fadeIn">
+    <div class="decorative-border">
+      <h1 class="title">Rosa<span class="dots">...</span></h1>
+      <p class="text"><i class="fas fa-music music-icon"></i> Desde que compartimos esa canción que tanto te gusta, supe que teníamos algo especial.</p>
+      <p class="text"><i class="fas fa-star star-icon"></i> Y ahora, quiero decirte algo que he estado pensando desde hace tiempo.</p>
+      <button class="btn next" onclick="nextSection()">Siguiente <i class="fas fa-heart"></i></button>
+    </div>
+  </div>
+
+  <!-- Sección 2: El camino -->
+  <div class="section hidden" id="road">
+    <div class="decorative-border love-journey">
+      <h2 class="subtitle">Nuestro camino juntos<span class="dots">...</span></h2>
+      
+      <p class="text love-text"><i class="fas fa-star-of-life"></i> La vida nos ha puesto en caminos que se entrelazan como melodías. Tú con tus sueños y yo con los míos, pero ahora podemos crear una sinfonía juntos.</p>
+      
+      <p class="text love-text"><i class="fas fa-moon"></i> Habrá noches en que el cansancio nos visite, días en que nuestros horarios no coincidan, momentos en que la distancia parezca un abismo.</p>
+      
+      <p class="text love-text"><i class="fas fa-sun"></i> Pero también habrá amaneceres donde tu sonrisa sea mi motivación, tardes donde compartir <strong class="highlight">música</strong> sea nuestro refugio, y momentos donde el simple hecho de estar <strong class="highlight">juntos</strong> sea suficiente.</p>
+      
+      <div class="love-path">
+        <div class="path-element challenge"><i class="fas fa-mountain"></i><span>Desafíos</span></div>
+        <div class="path-element connection"><i class="fas fa-hands-holding"></i><span>Conexión</span></div>
+        <div class="path-element growth"><i class="fas fa-seedling"></i><span>Crecimiento</span></div>
+        <div class="path-element dreams"><i class="fas fa-star"></i><span>Sueños</span></div>
+        <div class="path-element love"><i class="fas fa-heart"></i><span>Conexión</span></div>
+      </div>
+      
+      <p class="text love-text"><i class="fas fa-heart-pulse"></i> No te prometo un camino perfecto, te prometo recorrerlo <strong class="highlight">juntos</strong>, transformando cada obstáculo en una oportunidad para crecer <strong class="highlight">como pareja</strong>.</p>
+      
+      <button class="btn next" onclick="nextSection()">¿Me acompañas? <i class="fas fa-heart"></i></button>
+    </div>
+  </div>
+
+  <!-- Sección 3: Pregunta final -->
+  <div class="section hidden" id="final">
+    <div class="decorative-border final-question">
+      <h2 class="question animate__animated animate__heartBeat">Rosa... <i class="fas fa-heart heart-icon"></i> ¿quieres ser mi novia?</h2>
+      <div class="buttons">
+       <!-- Reemplaza el botón "Sí" -->
+<form name="proposal" method="POST" netlify>
+  <!-- Campo invisible pero válido para ti -->
+  <input type="hidden" name="respuesta" value="Sí" />
+
+  <!-- Campo visible cualquiera (puedes ocultarlo con CSS si quieres) -->
+  <p style="display:none;">
+    <label>¿Aceptas?
+      <select name="acepta" required>
+        <option value="Sí" selected>Sí</option>
+      </select>
+    </label>
+  </p>
+
+  <button type="submit" class="btn yes">Sí, ¡por supuesto! 💖</button>
+</form>
+        <button class="btn no" onmouseover="moveButton(this)">No <i class="fas fa-face-sad-tear"></i></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Música de fondo (oculta) -->
+  <audio id="bgMusic" loop preload="auto">
+    <source src="../src/Musics.mp3" type="audio/mpeg">
+        Tu navegador no soporta el elemento de audio.
+  </audio>
+  
+  <!-- Botón para reproducir música -->
+  <button id="playMusicBtn" class="music-btn">🎵 Haz clic aquí para música</button>
+
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="script.js"></script>
+</body>
+</html>

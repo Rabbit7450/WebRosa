@@ -1,0 +1,460 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #ff4d94, #4d4dff);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  color: #fff;
+  overflow: hidden;
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+#particles-js {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.section {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 20px;
+}
+
+.hidden {
+  display: none;
+}
+
+.title, .subtitle {
+  font-size: 3em;
+  margin-bottom: 20px;
+  text-shadow: 0 0 15px #ff4d94, 0 0 30px #ff1a75;
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 15px #ff4d94, 0 0 30px #ff1a75;
+  }
+  to {
+    text-shadow: 0 0 20px #ff4d94, 0 0 40px #ff1a75, 0 0 50px #ff1a75;
+  }
+}
+
+.text {
+  font-size: 1.3em;
+  margin: 15px auto;
+  max-width: 600px;
+  line-height: 1.6;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 15px 25px;
+  border-radius: 15px;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  transform: translateY(0);
+  transition: all 0.3s ease;
+}
+
+.text:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+.road-animation {
+  position: relative;
+  height: 120px;
+  margin: 40px auto;
+  width: 90%;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+}
+
+.road {
+  position: absolute;
+  width: 100%;
+  height: 8px;
+  background: linear-gradient(90deg, rgba(255,255,255,0.3) 0%, rgba(255,255,255,1) 50%, rgba(255,255,255,0.3) 100%);
+  top: 50%;
+  animation: moveRoad 4s linear infinite;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.obstacle, .us {
+  position: absolute;
+  top: 40%;
+  font-size: 2em;
+  animation: moveObstacle 4s linear infinite;
+  filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.3));
+}
+
+.obstacle i {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.us {
+  animation-delay: 1s;
+}
+
+.us i {
+  color: #ff4d94;
+  margin: 0 5px;
+  animation: pulse 2s infinite;
+}
+
+@keyframes moveRoad {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+@keyframes moveObstacle {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+.highlight {
+  color: #ff4d94;
+  text-shadow: 0 0 10px rgba(255, 77, 148, 0.5);
+}
+
+.final-question {
+  background: rgba(255, 77, 148, 0.1);
+}
+
+.heart-icon {
+  color: #ff4d94;
+  animation: heartbeat 1.5s ease infinite;
+}
+
+@keyframes heartbeat {
+  0% { transform: scale(1); }
+  25% { transform: scale(1.2); }
+  50% { transform: scale(1); }
+  75% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+/* Estilos para la sección del camino de amor */
+.love-journey {
+  background: linear-gradient(135deg, rgba(255, 77, 148, 0.1), rgba(77, 77, 255, 0.1));
+}
+
+.love-text {
+  text-align: left;
+  font-style: italic;
+  line-height: 1.8;
+}
+
+.love-text i {
+  color: #ff4d94;
+  margin-right: 10px;
+  font-size: 1.2em;
+}
+
+.love-path {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 30px 0;
+  position: relative;
+}
+
+.love-path:before {
+  content: '';
+  position: absolute;
+  width: 90%;
+  height: 3px;
+  background: linear-gradient(90deg, #ff4d94, #4d4dff);
+  top: 50%;
+  left: 5%;
+  z-index: 0;
+  border-radius: 3px;
+  box-shadow: 0 0 10px rgba(255, 77, 148, 0.5);
+}
+
+.path-element {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 15px;
+  position: relative;
+  z-index: 1;
+  transition: all 0.3s ease;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.path-element:hover {
+  transform: translateY(-10px) scale(1.1);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+}
+
+.path-element i {
+  font-size: 1.8em;
+  margin-bottom: 5px;
+}
+
+.path-element span {
+  font-size: 0.8em;
+  font-weight: bold;
+}
+
+.challenge i { color: #ff6b6b; }
+.connection i { color: #48dbfb; }
+.growth i { color: #1dd1a1; }
+.dreams i { color: #feca57; }
+.love i { 
+  color: #ff4d94; 
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.3); opacity: 0.8; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.btn {
+  padding: 15px 30px;
+  font-size: 1.2em;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  margin: 15px;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: bold;
+}
+
+.btn:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  transition: all 0.4s ease;
+  z-index: -1;
+}
+
+.btn:hover:before {
+  width: 100%;
+}
+
+.btn:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.4);
+}
+
+.btn:active {
+  transform: translateY(2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.yes {
+  background: linear-gradient(45deg, #ff4d94, #ff1a75);
+  color: white;
+}
+
+.no {
+  background: linear-gradient(45deg, #555, #333);
+  color: white;
+}
+
+.next {
+  background: linear-gradient(45deg, #4d4dff, #1a1aff);
+  color: white;
+}
+
+.music-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 10;
+  padding: 10px 15px;
+  font-size: 1.2em;
+  border: none;
+  border-radius: 30px;
+  background-color: #ff4d94;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: 0.3s;
+  animation: pulse 2s infinite;
+}
+
+.music-btn:hover {
+  background-color: #ff1a75;
+  transform: scale(1.05);
+}
+
+/* Elementos decorativos */
+.floating-hearts {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.floating-hearts i {
+  position: absolute;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 20px;
+  animation: float-heart 15s linear infinite;
+}
+
+.heart1 {
+  left: 10%;
+  top: 20%;
+  font-size: 25px !important;
+  animation-duration: 18s !important;
+  color: rgba(255, 77, 148, 0.7) !important;
+}
+
+.heart2 {
+  left: 30%;
+  top: 70%;
+  animation-delay: 2s;
+  animation-duration: 12s !important;
+}
+
+.heart3 {
+  right: 20%;
+  top: 40%;
+  font-size: 30px !important;
+  animation-delay: 5s;
+  color: rgba(255, 77, 148, 0.8) !important;
+}
+
+.heart4 {
+  right: 10%;
+  bottom: 30%;
+  animation-delay: 7s;
+  animation-duration: 20s !important;
+}
+
+.heart5 {
+  left: 50%;
+  top: 15%;
+  font-size: 22px !important;
+  animation-delay: 9s;
+}
+
+@keyframes float-heart {
+  0% {
+    transform: translateY(0) rotate(0deg) scale(1);
+    opacity: 0.8;
+  }
+  25% {
+    transform: translateY(-100px) rotate(90deg) scale(1.2);
+  }
+  50% {
+    transform: translateY(-200px) rotate(180deg) scale(1);
+  }
+  75% {
+    transform: translateY(-300px) rotate(270deg) scale(0.8);
+  }
+  100% {
+    transform: translateY(-400px) rotate(360deg) scale(0.6);
+    opacity: 0;
+  }
+}
+
+.decorative-border {
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+.dots {
+  animation: blink 1.5s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+.music-icon, .star-icon {
+  margin-right: 10px;
+  color: #ff4d94;
+}
+
+.star-icon {
+  animation: twinkle 2s infinite;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.7; transform: scale(1.2); }
+}
+
+/* Estilo para el reproductor de audio */
+audio#bgMusic {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 10;
+  width: 300px;
+  height: 50px;
+  border-radius: 30px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+  background: linear-gradient(135deg, rgba(255, 77, 148, 0.9), rgba(77, 77, 255, 0.9));
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 8px;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  transition: all 0.3s ease;
+}
+
+audio#bgMusic:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.6);
+}
+
+/* Personalización de los controles de audio (funciona en algunos navegadores) */
+audio#bgMusic::-webkit-media-controls-panel {
+  background: transparent;
+}
+
+audio#bgMusic::-webkit-media-controls-play-button,
+audio#bgMusic::-webkit-media-controls-volume-slider,
+audio#bgMusic::-webkit-media-controls-timeline {
+  filter: brightness(1.2) contrast(1.2);
+}
+
+/* Animación de pulso para el botón de música */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
