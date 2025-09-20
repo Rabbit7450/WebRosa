@@ -2,8 +2,12 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
   <title>¿Quieres ser mi novia, Rosa?</title>
+  <meta name="theme-color" content="#ff4d94">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💖</text></svg>">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
   <link rel="stylesheet" href="style.css"/>
@@ -60,16 +64,17 @@
     <div class="decorative-border final-question">
       <h2 class="question animate__animated animate__heartBeat">Rosa... <i class="fas fa-heart heart-icon"></i> ¿quieres ser mi novia?</h2>
       <div class="buttons">
-       <!-- Reemplaza el botón "Sí" -->
-<!-- index.html (sección final) -->
-<form id="proposal-form">
-  <!-- campo invisible para ti -->
-  <input type="hidden" name="respuesta" value="Sí" />
-  <!-- campo visible mínimo que pide Web3Forms -->
-  <input type="text" name="name" value="Rosa" hidden />
-  <button type="submit" class="btn yes">Sí, ¡por supuesto! 💖</button>
-</form>
-        <button class="btn no" onmouseover="moveButton(this)">No <i class="fas fa-face-sad-tear"></i></button>
+        <!-- Formulario con Formspree -->
+        <form action="https://formspree.io/f/xvgbewya" method="POST" id="proposal-form">
+          <!-- Campos del formulario -->
+          <input type="hidden" name="nombre" value="Rosa" />
+          <input type="hidden" name="respuesta" value="Sí" />
+          <input type="hidden" name="fecha" id="fecha-respuesta" />
+          
+          <button type="submit" class="btn yes">Sí, ¡por supuesto! <i class="fas fa-heart"></i></button>
+        </form>
+        
+        <button class="btn no" onmouseover="moveButton(this)" ontouchstart="moveButton(this)">No <i class="fas fa-face-sad-tear"></i></button>
       </div>
     </div>
   </div>

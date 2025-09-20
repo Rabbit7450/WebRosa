@@ -458,3 +458,379 @@ audio#bgMusic::-webkit-media-controls-timeline {
   50% { transform: scale(1.05); }
   100% { transform: scale(1); }
 }
+
+/* ===== RESPONSIVE DESIGN ===== */
+
+/* Tablets y pantallas medianas */
+@media (max-width: 1024px) {
+  .title, .subtitle {
+    font-size: 2.5em;
+  }
+  
+  .text {
+    font-size: 1.2em;
+    padding: 12px 20px;
+  }
+  
+  .love-path {
+    gap: 10px;
+  }
+  
+  .path-element {
+    width: 70px;
+    height: 70px;
+    margin: 0 10px;
+  }
+  
+  .path-element i {
+    font-size: 1.5em;
+  }
+  
+  .path-element span {
+    font-size: 0.7em;
+  }
+}
+
+/* Móviles grandes */
+@media (max-width: 768px) {
+  body, html {
+    overflow-x: hidden;
+  }
+  
+  .section {
+    padding: 15px;
+    top: 45%;
+  }
+  
+  .title, .subtitle {
+    font-size: 2em;
+    margin-bottom: 15px;
+  }
+  
+  .text {
+    font-size: 1.1em;
+    margin: 10px auto;
+    padding: 10px 15px;
+    max-width: 90%;
+  }
+  
+  .love-text {
+    text-align: center;
+    font-size: 1em;
+  }
+  
+  .love-path {
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0;
+  }
+  
+  .love-path:before {
+    width: 3px;
+    height: 90%;
+    top: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .path-element {
+    width: 60px;
+    height: 60px;
+    margin: 10px 0;
+  }
+  
+  .path-element i {
+    font-size: 1.3em;
+  }
+  
+  .path-element span {
+    font-size: 0.6em;
+  }
+  
+  .btn {
+    padding: 12px 25px;
+    font-size: 1em;
+    margin: 10px;
+    min-width: 120px;
+  }
+  
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .decorative-border {
+    padding: 20px;
+    margin: 10px;
+  }
+  
+  .music-btn {
+    bottom: 15px;
+    right: 15px;
+    padding: 8px 12px;
+    font-size: 1em;
+  }
+  
+  audio#bgMusic {
+    width: 250px;
+    bottom: 15px;
+    left: 15px;
+  }
+}
+
+/* Móviles pequeños */
+@media (max-width: 480px) {
+  .section {
+    padding: 10px;
+    top: 40%;
+  }
+  
+  .title, .subtitle {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+  }
+  
+  .text {
+    font-size: 1em;
+    padding: 8px 12px;
+    margin: 8px auto;
+    max-width: 95%;
+  }
+  
+  .love-text {
+    font-size: 0.9em;
+    line-height: 1.5;
+  }
+  
+  .path-element {
+    width: 50px;
+    height: 50px;
+    margin: 8px 0;
+  }
+  
+  .path-element i {
+    font-size: 1.1em;
+  }
+  
+  .path-element span {
+    font-size: 0.5em;
+  }
+  
+  .btn {
+    padding: 10px 20px;
+    font-size: 0.9em;
+    margin: 8px;
+    min-width: 100px;
+  }
+  
+  .decorative-border {
+    padding: 15px;
+    margin: 5px;
+  }
+  
+  .music-btn {
+    bottom: 10px;
+    right: 10px;
+    padding: 6px 10px;
+    font-size: 0.9em;
+  }
+  
+  audio#bgMusic {
+    width: 200px;
+    bottom: 10px;
+    left: 10px;
+    height: 40px;
+  }
+  
+  .floating-hearts i {
+    font-size: 15px;
+  }
+  
+  .heart1, .heart3, .heart5 {
+    font-size: 18px !important;
+  }
+}
+
+/* Móviles muy pequeños */
+@media (max-width: 360px) {
+  .title, .subtitle {
+    font-size: 1.5em;
+  }
+  
+  .text {
+    font-size: 0.9em;
+    padding: 6px 10px;
+  }
+  
+  .btn {
+    padding: 8px 16px;
+    font-size: 0.8em;
+    min-width: 80px;
+  }
+  
+  .path-element {
+    width: 45px;
+    height: 45px;
+  }
+  
+  .path-element i {
+    font-size: 1em;
+  }
+  
+  .path-element span {
+    font-size: 0.45em;
+  }
+  
+  audio#bgMusic {
+    width: 180px;
+    height: 35px;
+  }
+}
+
+/* ===== MEJORAS PARA TÁCTIL ===== */
+
+/* Aumentar el área táctil de los botones */
+@media (hover: none) and (pointer: coarse) {
+  .btn {
+    min-height: 44px;
+    min-width: 44px;
+    padding: 12px 20px;
+  }
+  
+  .music-btn {
+    min-height: 44px;
+    min-width: 44px;
+    padding: 10px 15px;
+  }
+  
+  /* Remover efectos hover en dispositivos táctiles */
+  .btn:hover {
+    transform: none;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  }
+  
+  .text:hover {
+    transform: none;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  }
+  
+  .path-element:hover {
+    transform: none;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  audio#bgMusic:hover {
+    transform: none;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+  }
+  
+  .music-btn:hover {
+    transform: none;
+    background-color: #ff4d94;
+  }
+}
+
+/* Orientación landscape en móviles */
+@media (max-height: 500px) and (orientation: landscape) {
+  .section {
+    top: 35%;
+    padding: 5px;
+  }
+  
+  .title, .subtitle {
+    font-size: 1.5em;
+    margin-bottom: 8px;
+  }
+  
+  .text {
+    font-size: 0.9em;
+    margin: 5px auto;
+    padding: 6px 10px;
+  }
+  
+  .love-path {
+    flex-direction: row;
+    justify-content: center;
+    margin: 10px 0;
+  }
+  
+  .love-path:before {
+    width: 90%;
+    height: 3px;
+    top: 50%;
+    left: 5%;
+    transform: none;
+  }
+  
+  .path-element {
+    width: 40px;
+    height: 40px;
+    margin: 0 8px;
+  }
+  
+  .btn {
+    padding: 8px 16px;
+    font-size: 0.8em;
+    margin: 5px;
+  }
+  
+  .decorative-border {
+    padding: 10px;
+    margin: 5px;
+  }
+  
+  .music-btn {
+    bottom: 5px;
+    right: 5px;
+    padding: 5px 8px;
+    font-size: 0.8em;
+  }
+  
+  audio#bgMusic {
+    width: 150px;
+    bottom: 5px;
+    left: 5px;
+    height: 30px;
+  }
+}
+
+/* Mejoras para accesibilidad táctil */
+@media (pointer: coarse) {
+  /* Asegurar que los elementos táctiles sean lo suficientemente grandes */
+  .btn, .music-btn {
+    touch-action: manipulation;
+  }
+  
+  /* Mejorar la visibilidad en pantallas táctiles */
+  .btn:active {
+    transform: scale(0.95);
+    transition: transform 0.1s ease;
+  }
+  
+  .music-btn:active {
+    transform: scale(0.95);
+    transition: transform 0.1s ease;
+  }
+}
+
+/* Optimización para pantallas de alta densidad */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .text, .decorative-border {
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+}
+
+/* Prevenir zoom en inputs en iOS */
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  select, textarea, input[type="text"], input[type="password"], 
+  input[type="datetime"], input[type="datetime-local"], 
+  input[type="date"], input[type="month"], input[type="time"], 
+  input[type="week"], input[type="number"], input[type="email"], 
+  input[type="url"], input[type="search"], input[type="tel"], 
+  input[type="color"] {
+    font-size: 16px;
+  }
+}
