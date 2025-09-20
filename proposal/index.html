@@ -61,19 +61,12 @@
       <h2 class="question animate__animated animate__heartBeat">Rosa... <i class="fas fa-heart heart-icon"></i> ¿quieres ser mi novia?</h2>
       <div class="buttons">
        <!-- Reemplaza el botón "Sí" -->
-<form name="proposal" method="POST" netlify>
-  <!-- Campo invisible pero válido para ti -->
+<!-- index.html (sección final) -->
+<form id="proposal-form">
+  <!-- campo invisible para ti -->
   <input type="hidden" name="respuesta" value="Sí" />
-
-  <!-- Campo visible cualquiera (puedes ocultarlo con CSS si quieres) -->
-  <p style="display:none;">
-    <label>¿Aceptas?
-      <select name="acepta" required>
-        <option value="Sí" selected>Sí</option>
-      </select>
-    </label>
-  </p>
-
+  <!-- campo visible mínimo que pide Web3Forms -->
+  <input type="text" name="name" value="Rosa" hidden />
   <button type="submit" class="btn yes">Sí, ¡por supuesto! 💖</button>
 </form>
         <button class="btn no" onmouseover="moveButton(this)">No <i class="fas fa-face-sad-tear"></i></button>

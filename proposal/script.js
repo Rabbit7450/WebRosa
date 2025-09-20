@@ -68,3 +68,27 @@ function moveButton(btn) {
   btn.style.left = `${x}px`;
   btn.style.top = `${y}px`;
 }
+const form = document.getElementById('proposal-form');
+form.addEventListener('submit', async e => {
+  e.preventDefault();
+
+  const formData = new FormData(form);
+  formData.append('access_key', 'AQUÍ-TU-ACCESS-KEY'); // ← clave que te llegó
+
+  const res = await fetch('https://formspree.io/f/xvgbewya', {
+    method: 'POST',
+    body: JSON.stringify(Object.fromEntries(formData)),
+    headers: { 'Content-Type': 'application/json', Accept: 'application/json' }
+  });
+
+  const result = await res.json();
+  if (result.success) {
+    Swal.fire({
+      title: '¡Respuesta enviada!',
+      text: 'Rosa ha dicho que Sí 💖',
+      icon: 'success'
+    });
+  } else {
+    Swal.fire('Error', 'Inténtalo otra vez', 'error');
+  }
+});
