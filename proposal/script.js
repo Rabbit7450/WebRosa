@@ -73,16 +73,16 @@ form.addEventListener('submit', async e => {
   e.preventDefault();
 
   const formData = new FormData(form);
-  formData.append('access_key', 'AQUÍ-TU-ACCESS-KEY'); // ← clave que te llegó
+  formData.append('respuesta', 'Sí');   // tu campo extra
+  // NO añadas access_key aquí; Formspree ya lo identifica por la URL
 
   const res = await fetch('https://formspree.io/f/xvgbewya', {
     method: 'POST',
-    body: JSON.stringify(Object.fromEntries(formData)),
-    headers: { 'Content-Type': 'application/json', Accept: 'application/json' }
+    body: formData,          // <-- sin JSON.stringify
+    // NO pongas Content-Type; FormData lo establece solo
   });
 
-  const result = await res.json();
-  if (result.success) {
+  if (res.ok) {              // 200-299
     Swal.fire({
       title: '¡Respuesta enviada!',
       text: 'Rosa ha dicho que Sí 💖',
